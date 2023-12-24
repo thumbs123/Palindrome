@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/background_light"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        app:cardCornerRadius="57.5dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/outline_person_add_alt_black_48"
+        android:scaleType="centerCrop" />
+
+</androidx.cardview.widget.CardView>
+
+<EditText
+android:id="@+id/nameInput"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="50dp"
+android:layout_marginBottom="8dp"
+android:hint="Name"
+android:textColor="@android:color/black" />
+
+<EditText
+android:id="@+id/sentenceInput"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/nameInput"
+android:hint="Palindrome"
+android:textColor="@android:color/black" />
+
+<Button
+android:id="@+id/checkButton"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/sentenceInput"
+android:layout_marginStart="50dp"
+android:layout_marginEnd="50dp"
+android:text="Check"
+android:textColor="@android:color/white" />
+
+<Button
+android:id="@+id/nextButton"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@id/checkButton"
+android:layout_marginStart="50dp"
+android:layout_marginEnd="50dp"
+android:text="Next"
+android:textColor="@android:color/white" />
+    </LinearLayout>

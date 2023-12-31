@@ -42,10 +42,8 @@ public class ThirdActivity extends AppCompatActivity implements UserAdapter.OnUs
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-        // Initialize ApiService
         apiService = RetrofitClient.getInstance().create(ApiService.class);
 
-        // Set up EndlessRecyclerViewScrollListener for infinite scrolling
         recyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(layoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
@@ -53,7 +51,6 @@ public class ThirdActivity extends AppCompatActivity implements UserAdapter.OnUs
             }
         });
 
-        // Set up pull to refresh
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -61,7 +58,6 @@ public class ThirdActivity extends AppCompatActivity implements UserAdapter.OnUs
             }
         });
 
-        // Load initial data
         loadData();
     }
 
@@ -103,7 +99,6 @@ public class ThirdActivity extends AppCompatActivity implements UserAdapter.OnUs
 
     @Override
     public void onUserClick(User user) {
-        // Menggunakan Intent untuk memberikan hasil kembali ke SecondActivity
         Intent resultIntent = new Intent();
         resultIntent.putExtra("selectedUserName", user.getFirstName() + " " + user.getLastName());
         setResult(RESULT_OK, resultIntent);
